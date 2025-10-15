@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroRacing from "@/assets/hero-racing.jpg";
 
-const GameHero = () => {
+interface GameHeroProps {
+  onPlayClick: () => void;
+}
+
+const GameHero = ({ onPlayClick }: GameHeroProps) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -36,6 +40,7 @@ const GameHero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <Button 
               size="lg"
+              onClick={onPlayClick}
               className="text-lg px-8 py-6 bg-primary hover:bg-primary-glow shadow-neon hover:shadow-pink transition-all duration-300 font-bold"
             >
               START RACE
