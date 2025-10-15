@@ -50,6 +50,7 @@ const GameHero = ({ onPlayClick }: GameHeroProps) => {
             <Button 
               size="lg"
               variant="outline"
+              onClick={() => navigate("/garage")}
               className="text-lg px-8 py-6 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-bold"
             >
               VIEW GARAGE
