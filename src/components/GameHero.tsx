@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import heroRacing from "@/assets/hero-racing.jpg";
+import { useNavigate } from "react-router-dom";
 
 interface GameHeroProps {
-  onPlayClick: () => void;
+  onPlayClick?: () => void;
 }
 
 const GameHero = ({ onPlayClick }: GameHeroProps) => {
+  const navigate = useNavigate();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -40,7 +42,7 @@ const GameHero = ({ onPlayClick }: GameHeroProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <Button 
               size="lg"
-              onClick={onPlayClick}
+              onClick={onPlayClick ? onPlayClick : () => navigate("/play")}
               className="text-lg px-8 py-6 bg-primary hover:bg-primary-glow shadow-neon hover:shadow-pink transition-all duration-300 font-bold"
             >
               START RACE

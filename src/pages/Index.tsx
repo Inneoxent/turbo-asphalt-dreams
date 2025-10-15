@@ -1,19 +1,11 @@
-import { useState } from "react";
 import GameHero from "@/components/GameHero";
 import Car3DShowcase from "@/components/Car3DShowcase";
 import GameFeatures from "@/components/GameFeatures";
-import { RacingGame } from "@/components/RacingGame";
 
 const Index = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  if (isPlaying) {
-    return <RacingGame onExit={() => setIsPlaying(false)} />;
-  }
-
   return (
     <div className="min-h-screen bg-background">
-      <GameHero onPlayClick={() => setIsPlaying(true)} />
+      <GameHero />
       <Car3DShowcase />
       <GameFeatures />
       
